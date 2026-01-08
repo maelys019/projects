@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PorteFolio Maelys</title>
+     <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        height: 100vh;
+    }
+    header {
+        background-color:rgb(49, 15, 197);
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+    } 
+    .logo {
+        text-align: left;
+    }
+    nav button {
+        border: none;
+        background: transparent;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 48px;
+        height: 45px;
+    }
+    nav button span {
+        display: block;
+        background: white;
+        height: 5px;
+        width: 100%;
+        border-radius: 5px;  
+        gap: 5px;
+    }
+    h1 {
+        text-align: center;
+        text-decoration-line: underline;
+    }
+    #apropos {
+        display: flex;
+        justify-content: space-between;
+    }
+    img {
+        width: 80px;
+        height: 80px; 
+    }
+    .grille-contenir {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+        /*background-color: #f0f0f0;*/
+        transition: background-color 0.3s ease;
+    }
+    .grille-item:hover {
+        background-color: #3498db;
+        transform: scale(1.05);
+    }
+    .contenir {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+    }
+    button {
+        background-color: teal;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: black;
+    }
+    .image {
+        display: flex;
+        justify-content: space-between;
+    }
+    main {
+        height: 70%;
+    } 
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+    .input {
+       /* margin: 20px;*/
+    }
+    #button {
+        padding: 10px 5px;
+
+    }
+    .footer {
+        /*text-align: center;*/
+    }
+    footer {
+       height: 15%; 
+       display: flex;
+       justify-content: end;
+    }
+    @media (min-width: 768px) {
+        .contenir-grille {
+            grid-template-colums: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 1024px) {
+        .contenir-grille {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    </style>
+    </head>
+    <body>
+    <header>
+        <h1 class="logo">LOGO</h1>
+    <nav class="navigation">
+        <button class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+       </button>
+    </nav>
+    </header>
+    <main>
+        <section id="aPropos">
+           <h1>A propos </h1>
+           <div class="image">
+           <p>Je suis Maelys Nsamen ingènieure en Informatique spécialement dans le FrontEnd</p>
+           <img src="image.png">
+           </div>
+        </section>
+        <section  id="compétences">
+           <h1>Mes Compétences</h1>
+        <article class="grille-contenir">
+           <article class="contenir">HTML</article>
+           <article class="contenir">CSS</article>
+           <article class="contenir">JS</article>
+           <article class="contenir">JAVA</article>
+        </article>
+        </section>   
+        <section id="Projet">
+              <h1>Mes Projets</h1>
+              <div>
+              <p>projet</p>
+              <a href=""></a>
+              </div>
+              <button> voir plus </button>
+        </section>      
+        <section id="contact">
+            <h1>conctact</h1>
+            <form class="form">
+                <div class="input">
+                <label for="name">Nom</label>
+                <input type="text">
+                </div>
+                <div class="input">
+                <label email>Email</label>
+                <input type="email">
+                </div>
+                <button id="button">Envoyer</button>
+            </form>
+        </section>   
+    </main>
+    <footer>
+           <p class="footer">@Copyright PorteFolio Maelys 2025</p>
+    </footer>
+    <script>
+        
+    </script>
+    </body>
+</html>
+        
