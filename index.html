@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devia- Sign up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            text-align: center;
+        }
+               
+    </style>
+</head>
+<body>
+   <header>
+    <h1>If I think from below the bridge your decision !</h1>
+   </header>
+   <main>
+    <form>
+        <input type="text" id="name" name="Full home" placeholder="full home">
+        <input type="text" id="Email" placeholder="Email">
+        <input type="password" id="Password" placeholder="Password">
+        <input type="password" id="Confirm Password" placeholder="Confirm Password">
+        <button>Sign Up With Devia</button>
+    </form>
+    </main>
+    <footer> 
+   <h1>Sign Up with Devia</h1>
+    </footer>
+   <script>
+    // includes () 
+    const fruits = ["pomme","banane","avocat"];
+    console.log(fruits.includes("banane"));
+    console.log(fruits.includes("pomme"));
+    //lastIndexOf()
+    const notes = [ 10, 12, 14, 12, 15];
+    console.log(notes.lastIndexOf(12));
+    console.log(notes.lastIndexOf(17));
+    //some()
+    const ages = [ 12, 15, 18, 20];
+    const resultat = ages.some ( age => 18);
+    console.log(resultat);
+    //Array.from()
+    const nombre = 51015;
+    const lettres = Array.from(nombre);
+    console.log(lettres);
+    //Array.of()
+    const nombres = Array.of(5,10,15);
+    console.log(nombres);
+    //join()
+    const mots = ["je", "mange", "alloco"];
+    console.log(mots.join(" "));
+    //flat()
+    const tab = [1,2,[3,4],[5,[6]]];
+    console.log(tab.flat(2));
+    const note = [[10,12],[14,16],[18]];
+    console.log(note.flat());
+    //concat()
+    const a = [1,2];
+    const b = [3,4];
+    console.log(a.concat(b));
+    //toString()
+    const couleurs = ["rouge","vert","bleu"];
+    console.log(couleurs.toString());
+    const notess = [10, 9, 16, 12, 4, 6, 11.5, 12 ,10];
+    let notessMinimale = notess[0];
+    for (let i=0 ; i < notess.length ; i++) {
+        if ( notess[i] < notessMinimale ) {
+            notessMinimale = notess[i];
+            console.log(notessMinimale);
+        }
+        console.log("notes Minimale est:",notessMinimale);
+    }
+    let notessMaximale = 0;
+    for (let i = 0 ; i < notess.length; i++) {
+        if( notess[i] > notessMaximale) {
+            notessMaximale = notess[i];
+            console.log(notessMaximale)
+        }
+        console.log("notes maximale est :", notessMaximale);
+    }
+    console.log("math.max:", Math.max(...notess));
+    console.log("math.min:", Math.min(...notess));
+    <button onclick= "editName(${index})" style="color: blue; border:none;
+                background:none; cursor:pointer;">✏️</button>
+   </script>
+</body>
+</html>

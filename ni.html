@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const joueuseBaskette = {
+            nom: "nsamen",
+            prenom: "maelys",
+            taille:  1.70,
+            email: "maelys@gmail.com",
+            dateNaissance: new Date(""),
+            listeLanguageProgramation: ["html","css","java","python","PHP"],
+        };
+        console.log("Ma liste de language de programmation est :" ,joueuseBaskette.listeLanguageProgramation);
+        console.log("Ma date de naissance est : " , joueuseBaskette.dateNaissance);
+        //console.log(joueuseBaskette.dateNaissance ?? "2003-07-12");
+        console.log(undefined || "2003-07-12"); // verifier si la valeur est null ou undefined
+        const fruits = ["pomme","banane","cerise"];
+        fruits.forEach(fruit => {
+            console.log(`j'aime les ${fruit}`);
+        });
+    </script>
+</body>
+</html>

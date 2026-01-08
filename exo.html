@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVIA TECHNOLOGY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body {
+            height: 100%;
+        }
+        .contenair {
+            background-color: #880ec0;
+            height: 40%;
+            text-align: center;
+            font-style: oblique;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contenu {
+            padding: 25px 50px;
+            list-style-type: none;
+            gap: 0 10px;
+        }   
+        ul {
+            list-style-type: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <section class="contenair">
+        <h1>G</h1>
+    </section>
+    <section class="contenu">
+        <h1>Sign UP</h1>
+        <p>Fill the form below to create your account</p>
+        <form>
+            <ul>
+            <li><label for="Full name ">Full name </label></li>
+            <li><input type="text" id="nom" name="nom" placeholder="Enter your full name"></li>
+            <li><label for="Email">Email</label></li>
+            <li><input type="text" id="email" name="email" placeholder="Enter your mail"></li>
+            <li><label for="password">Password </label></li>
+            <li><input type="text" id="password" name="password" placeholder="Enter your password"></li>
+            <li><label for="Confirm password">Confirm Password </label></li>
+            <li><input type="text" id="Confirm password" name="Confirm password" placeholder="Confirm Password"></li>
+            </ul>
+        </form>
+        <button>Sign Up</button>
+        <button> Sign Up with Google</button>
+        <p>Already have an account? Sign in</p>
+    </section>
+    <script>
+         function capitaliserMots(phrase) {
+            return phrase
+            .trim()
+            .toLowerCase()
+            .split(" ")
+            .map(mot => {
+                return mot.charAt(0).toUpperCase() + mot.slice(1) 
+            })
+            .join(" ");
+         }
+         const resultat = capitaliserMots("maelys nsamen");
+         console.log(resultat);
+         function trierAlphabétiquement(tableau) {
+            return tableau.slice().sort((a,b) => {
+                return a.localeCompare(b);
+            });
+         }
+         const noms = [ "Maelys", "Rachida", "Thevy", "Ange","Laurence"];
+         const nomsTries = trierAlphabétiquement(noms);
+         console.log(nomsTries);
+         function supprimernoms(nomAsupprimertableau) {
+            return tableau.filter(nom => nom !== nomAsupprimer);
+         }
+         const listeNoms= [ "Maelys", "Rachida", "Thevy", "Ange","Laurence"];
+         listeNoms = supprimernoms("Maelys", listeNoms);
+         console.log(listeNoms);
+    </script>
+</body>
+</html>

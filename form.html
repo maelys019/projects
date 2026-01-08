@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100svh;
+            padding: 50px;
+        }
+        h1 {
+            text-align: center;
+            padding-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-emphasis: "☀" yellow;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .header-box {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        input {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #00E5FF;
+            border-radius: 5px;
+            outline: none;
+
+        }
+        button {
+            background-color: #00E5FF;
+            color: black;
+            padding: 15px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+        }
+        .student-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 450px;
+            /*padding-right: 5px;*/
+            padding-bottom: 15px;
+            height: 100vh;
+            overflow: auto;
+        }
+        #displayArea::-webkit-scrollbar {
+            width: 3px;
+        }
+        #displayArea::-webkit-scrollbar-thumb {
+            background-color: #ff4d4d;
+            border-radius: 5px;
+        }
+        #displayArea::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 15px;
+        }
+        #displayArea::-webkit-scrollbar-thumb:hover {
+            background-color: #ff4d4d;
+        }
+        .name-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin-bottom: px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px  #00E5FF;
+            border-bottom: 5px solid #00E5FF;
+            border-radius: 8px;
+            font-size: 17px;
+            animation: slideIn 0.4s ease-out;
+            animation: fadeIn 0.3s ease;
+        }
+        .name-card:hover {
+            border-color: #00d2d3;
+            background-color: #f0ffff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .name-card:active {
+            background-color: #e0f7fa;
+            transform: scale(0.98);
+        }
+        .name-card:hover .delete-btn {
+            transform: scale(1.2);
+        }
+        .delete-btn {
+            color: #ff4d4d;
+            background-color: none; 
+            border: none;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fladeIn {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media screen and (min-width: 360px) {
+            body {
+            padding: 20px ;
+        }
+            .container {
+            width: 100%;
+            padding: 5px;
+            }
+            input {
+            padding: 10px;   
+            }
+            button {
+            padding: 14px;
+            
+            }
+        }
+        @media screen and (min-width: 1280px) {
+            body {
+            
+                width: 100%;
+            }
+            .container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   <form class="container">
+    <h1>Liste de la salle</h1>
+       <div class="header-box">
+        <input type="search" id="studentName" placeholder="Entrer le nom d'un étudiant" required>
+        <button id="addBtn" onclick ="ajouter">AJOUTER</button>
+       </div>
+       <template id="item">
+           <li class="name-card">
+                <p></p>
+                <button class="delete-btn">❌</button>
+           </li>
+        </template>
+       <div id="displayArea" class="student-list"></div>
+    </form>
+   <script>
+    let listeEtudiants = [];
+    const champSaisie= document.getElementById('studentName');
+    const boutonAjouter= document.getElementById('addBtn');
+    const zoneAffichage= document.getElementById('displayArea');
+    const template = document.querySelector("#item");
+    //transformer toutes les premières lettres en majuscules
+    /** 
+    * mettre toutes les premières lettres des chaines de caractères en majuscules
+    * @params {string}
+    * @returns{string}
+    */
+    function capitaliserNomEtudiant(nom) {
+        return nom.toLowerCase().split(' ').map(lettre => lettre.charAt(0).toUpperCase() + lettre.slice(1))
+        .join(' ');
+    }
+    //mettre l'affichage de la liste a jour
+    /**
+    * met l'affichage de la liste à jour 
+    * @returns {void}
+    */
+    function affichageListeEcran() {
+        zoneAffichage.replaceChildren();
+        listeEtudiants.forEach((nom, index) => {
+            const newitem = template.content.cloneNode(true);
+            const nameCard = newitem.querySelector("p");
+            nameCard.textContent = nom
+            const button = newitem.querySelector("button");
+            button.addEventListener("click" , () => {
+                supprimerEtudiant(index)
+            })
+            zoneAffichage.appendChild(newitem);
+        });
+    }
+    //Pour ajouter un étudiant à la liste
+    function ajouterEtudiant() {
+        const texteSaisi = champSaisie.value.trim();
+        if (texteSaisi === " ")  return;
+            const nomFinal = capitaliserNomEtudiant(texteSaisi);
+            // vérifier les doublons 
+        const dejaPresent = listeEtudiants.some(nom => nom.toLowerCase() === nomFinal.toLowerCase());
+        if (dejaPresent) {
+            alert("Ce nom a déja été entré !");
+        } else {
+            listeEtudiants.push(nomFinal);
+            // trier par ordre croissant de A a Z
+            listeEtudiants.sort((nom1,nom2) => nom1.localeCompare(nom2));
+            affichageListeEcran();
+        }
+        champSaisie.value = "";
+        champSaisie.focus = "";
+    }
+        //Supprimer un étudiant à partir de son index
+        /** 
+        *supprimer un etudiant a partir de son index
+        * @params {number}
+        * @returns {void}
+        */
+        function supprimerEtudiant(index) {
+            listeEtudiants.splice(index, 1);
+            affichageListeEcran();
+        }
+    boutonAjouter.onclick = ajouterEtudiant;
+    champSaisie.onkeydown = function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            ajouterEtudiant();
+        }
+    };
+    localStorage.setItem("etude", JSON.stringify(listeEtudiants));
+    const listeEtudiantsEnString = localStorage.getItem("etude2");
+    console.log(JSON.parse(listeEtudiantsEnString));
+    //console.log(champSaisie,boutonAjouter,zoneAffichage);
+   </script>
+</body>
+</html>

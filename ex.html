@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVIA</title>
+    <style>
+       *{
+        padding: 0;
+        margin: 0;
+       }
+       body {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+        height: 100svh;
+       }
+       .conteneur {
+        background-color: violet;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+       }
+       nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+        text-decoration: none;
+        list-style-type: none;
+       }
+       a {
+        text-decoration: none;
+        color: white;
+       }
+       nav li {
+        margin: 10px;
+       }
+       main {
+        height: 81%;
+        padding-top: 30px;
+       }
+       .contenu {
+        background-color: white;
+        padding: 0 150px 40px 150px;
+       }
+       .contenair {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0 5px;
+        padding-top: 10px;
+       }
+       button {
+        background-color: violet;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+       }
+       .card {
+        display: flex;
+        justify-content: space-around;
+       }
+       .contenir {
+        height: 250px;
+        width: 240px;
+        background-color: aqua;
+        border-radius: 5px;
+        box-shadow: 10px 10px rgb(65, 65, 231);
+       }
+       footer {
+        background-color: violet;
+        color: white;
+        text-align: center;
+       }
+       .color {
+        color: black;
+       }
+    </style>
+</head>
+<body>
+   <header class="conteneur">
+    <h1>DEVIA</h1>
+    <nav>
+        <ul>
+            <li><a href="accuiel.html">Accuiel</a></li>
+            <li><a href="apropos.html">A Propos</a></li>
+            <li><a href="Services.html">Services</a></li>
+        </ul>
+    </nav>  
+   </header>
+   <main>
+     <section class="contenu">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, nihil eaque, quidem accusantium voluptatem adipisci et dolorum totam commodi ducimus autem, vel a nemo maxime voluptatum odio? Sit, et laboriosam!</p>
+         <div class="contenair">
+            <button>EN SAVOIR PLUS</button>
+            <button>MORE &rightarrow;</button>
+        </div>
+     </section>
+     <section class="card">
+        <article class="contenir"></article>
+        <article class="contenir"></article>
+        <article class="contenir"></article>
+        <article class="contenir"></article>
+     </section>
+   </main>  
+   <footer>
+                <p>Min high footer de genie</p>
+                <p class="color">Copyright DEVIA 2023</p>
+   </footer> 
+</body>
+</html>

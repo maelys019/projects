@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+       * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+       html,body{
+        display: flex;
+        flex-direction: column; 
+        height: 100%;
+        font-size: 1.1rem;
+      }
+      
+       .contenu {
+        background-color: rgb(192, 22, 192);
+        height: 15%;
+        font-size: 2.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      main {
+         padding: 30px 30px;
+         height: 75%;
+         
+      }
+      h1 {
+         font-size: 1.2em;
+      }
+      .contenair {
+         padding: 5px 0;
+         font-size: 0.5em;
+      }
+      
+      .form {
+         padding: 10px 0;
+         display: flex;
+         flex-direction: column;
+      }
+      input {
+         padding: 8px 96px 8px 5px;
+      }
+      .content {
+         text-align: center;
+      }
+      .sign {
+         background-color: rgb(192, 22, 192);
+         color: white;
+         border-radius: 6px;
+         padding:  13px 0;
+         border: none;
+         width: 100%;
+         font-size: 0.9rem;
+      }
+      .button {
+         background-color: rgb(219, 199, 199);
+         border-radius: 6px;
+         padding: 13px 0;
+         width: 100%;
+         margin: 5px;
+         border: none;
+         font-size: 0.8rem;
+         font-weight: 600;
+         margin-top: 12px;
+      }
+      a {
+         text-decoration: none;
+      }
+      footer {
+         display: flex;
+         justify-content: center;
+         align-items: end;
+         margin: 20px;
+      }
+      @media screen and (min-width: 768px) {
+         .contenu {
+            font-size: 2.5rem;
+         }
+         .contenair {
+            font-size: 1.3rem;
+            margin-top: 10px;
+         }
+         .main {
+            font-size: 1.6rem;
+         }
+         main {
+            padding: 50px 40px;
+         }
+         .form {
+            padding: 8px;
+         }
+         .content {
+            margin-top: 25px;
+         }
+         .button {
+            margin-top: 25px;
+         }  
+         .sign {
+            font-weight: 800;
+         }
+      }
+      @media screen and (min-width: 1024px){
+      .contenu {
+         font-size: 3.3rem;
+         width: 700px;
+         height: 100%;
+      }
+      main {
+         padding: 25px 50px 0 30px;
+         width: 700px;
+         height: 100%;
+         font-size: 2rem;
+      }
+      body {
+         display: flex;
+         height: 100svh;
+         flex-direction: row-reverse;
+      }
+      .button {
+         margin-top: 7px;
+      }
+      .content {
+         padding: 7px 0;
+      }
+      .sign {
+         font-weight: 700;
+         margin-top: 1px;
+      }
+      input {
+         margin-top: 10px;
+      }
+      .form {
+         padding: 6px 0;
+      }
+      button {
+         padding: 12px;
+      }
+      footer {
+         display: flex;
+         justify-content: center;
+         align-items: end;
+         font-size: 1.5rem;
+         margin-top: 4px;
+      }
+   } 
+   @media screen and (min-width: 1400px)  {
+      body {
+         display: flex;
+         height: 100svh;
+         flex-direction: row-reverse;
+         margin: 70px 250px;
+         max-width: 1920px;
+         background-color: rgb(20, 238, 184);
+      }
+      .contenu {
+         width: 700px ;
+      }
+      main {
+         background-color: white;  
+      
+      }
+   } 
+      
+    </style>
+</head>
+<body>
+   <section class="contenu">
+    <h1> DEVIA </h1>
+   </section>
+   <main>
+      <h1 class="main">Sign Up</h1>
+   <section class="contenair">
+      <p>Fill the form below to create your account</p>
+         <form>
+            <div class="form">
+            <label for="Full name ">Full name </label>
+            <input type="text"  placeholder="Enter your full name"> 
+            </div>
+            <div class="form">
+            <label for="Email">Email</label>
+            <input type="email"  placeholder="Enter your mail">
+            </div>
+            <div class="form">
+            <label for="password">Password </label>
+            <input type="password"  placeholder="Enter your password">
+            </div>
+            <div class="form">
+            <label for="Confirm password">Confirm Password </label>
+            <input type="password"  placeholder="Confirm Password">
+            </div>
+         </form>
+         <section class="content">
+         <button class="sign">Sign Up </button>
+         <button class="button"> Sign Up with Google</button>
+         </section>
+   </section>
+   <div>
+      
+   </div>
+   <footer>
+      <p>Already have an account? <a href="Sign In">Sign In</a> </p>
+   </footer>
+   </main>
+</body>
+</html>

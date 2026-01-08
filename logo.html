@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        * {
+            margin: 0;   
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+        html {
+            overflow: hidden;
+            
+        }
+        header {
+            background-color: #000;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav {
+            position: relative;
+        }
+        nav button {
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 48px;
+            height: 35px;
+            position: relative;
+            z-index: 2;
+        }
+       nav button span {
+            display: block;
+            background: white;
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            position: relative;
+            
+       }
+       li {
+           list-style-type: none;
+       }
+       a {
+           text-decoration: none;
+       }
+        nav ul {
+            position: fixed;
+            height: 100dvh;
+            background-color: blueviolet;
+            top: 0;
+            right: -300px;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px 0;
+            transition: .5s;
+            transform: translateX(100%);
+            z-index: 1;
+        }
+        .menus.opened {
+            right: 0;
+        }
+        .opened {
+            transform: translateX(0);
+        }
+        @media screen and (min-width: 768px) {
+            header {
+            background-color: #000;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+        } 
+        .logo {
+            font-size: 2rem;
+        }
+        }
+        
+    </style>
+</head>
+<body>
+<header>
+   <h1 class="logo">Logo</h1>
+   <nav>
+      <button class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menus">
+        <li> <a href="">Menu 1</a></li>
+        <li> <a href="">Menu 1</a></li>
+        <li> <a href="">Menu 1</a></li>
+        <li> <a href="">Menu 1</a></li>   
+      </ul>
+   </nav>
+</header>
+<script>
+    const button = document.querySelector(".burger");
+    console.log(button)
+    const menus = document.querySelector(".menus");
+    button.addEventListener("click", function() {
+        menus.classList.toggle("opened");
+    });
+    listeNoms.push(nouveauNom);
+        const card = document.createElement('div');
+        card.className = 'name-card';
+        card.textContent = nouveauNom;
+        displayArea.appendChild(card);
+        inputField.value = "";
+        inputField.focus();
+</script>
+</body>
+</html>

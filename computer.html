@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        body {
+            margin: 40px;
+        }
+        h1 {
+            padding-bottom: 20px;
+        }
+        form {
+            
+        }
+    </style>
+</head>
+<body>
+   <h1> Text input </h1>
+   <form>
+    <label for="name">Enter name of user</label> <br>
+    <input type="text" name="name" placeholder="name"> <br> <br>
+    <label for="name">User password</label> <br>
+    <input type="password" placeholder="password" required> <br> <br>
+    <label for="gender">Enter Gender </label> <br>
+    <input type="radio" id="gender" name="gender" value="Male">Male <br> 
+    <input type="radio" id="gender" name="gender" value="Female">Female <br> <br>
+    <label for="hobbies">Hobbies</label> <br>
+    <input type="checkbox" name="hobbies" id="hobbies" value="Reading">Reading <br>
+    <input type="checkbox" name="hobbies" id="hobbies" value="Singing">Singing <br>
+    <input type="checkbox" name="hobbies" id="hobbies" value="Car">Car <br> <br>
+    <label for="Favourite">Favourite Color</label> <br>
+    <select name="favourite color" id="favourite color"> <br>
+        <option value="red">Red</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+        <option value="Yellow">Yellow</option> 
+    </select> <br> <br>
+   </form>
+   <button type="submit">Submit</button>
+   <button type="reset">Reset</button>
+</body>
+</html>

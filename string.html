@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    .clock {
+        color: white;
+        font-family: 'Arial' sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 0 0 50px rgba(66, 16, 248, 0.3);
+        display: flex;
+        justify-content: center;
+        padding: 250px;
+    }
+    
+</style>
+<body>
+    <section>
+    <div class ="clock" id="clock">
+        00:00:00
+    </div>
+    </section>
+    <script>
+        window.onload = function(){
+        function Clock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            if(clockElement) {
+                clockElement.textContent = h+ ":" +m + ":" +s;
+            }
+        }
+        setInterval(Clock, 1000);
+        updateClock();
+    }
+    </script>
+</body>
+</html>

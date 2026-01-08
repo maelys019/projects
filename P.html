@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .contain {
+        position: relative;
+    }
+    .tiret {
+        position: relative;
+        z-index: 1;
+        border: dashed;
+        height: 8em;
+        margin-bottom: 1em;
+        margin-top: 2em;
+    }
+    .barre {
+        position: absolute;
+        z-index: 3; /* place .boite-doree au-dessus de .boite-verte et .boite-tirets */
+        background: gold;
+        width: 80%;
+        left: 60px;
+        top: 3em;
+    }
+    .rien {
+        position: absolute;
+        z-index: 2; /* place .boite-verte au-dessus de .boite-tirets */
+        background: lightgreen;
+        width: 20%;
+        left: 65%;
+        top: -25px;
+        height: 7em;
+        opacity: 0.9;
+        transition: 0.9s;
+    }
+    h1 {
+        transition: 0.9s;
+
+    }
+</style>
+<body>
+    <h1>Montre moi</h1>
+    <div class="contain">
+        <div class="tiret">boite A</div>
+        <div class="barre">boite B</div>
+        <div class="rien">boite C</div>
+    </div>
+    <script>
+        const ma = docu
+    </script>
+</body>
+</html>
